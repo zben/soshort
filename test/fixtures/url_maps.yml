@@ -1,0 +1,7 @@
+one:
+  short_url: MyString
+  long_url: MyString
+
+two:
+  short_url: MyString
+  long_url: MyString

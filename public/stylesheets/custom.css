@@ -1,0 +1,19 @@
+.tags{width:300px;}
+
+label{
+  width:auto;
+}
+.row{
+  margin:5px 0;
+}
+
+input{width:100%;}
+.msgboxerror{color:red}
+.msgboxok{color:green}
+
+li.tag{
+  display:inline-block;
+  background-color:green;
+  padding:5px 10px;
+  color:white}
+li.tag a{color:white;}

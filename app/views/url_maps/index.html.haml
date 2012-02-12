@@ -1,0 +1,22 @@
+%h3 All Short URLs 
+%table.zebra-striped.bordered-table
+  %tr
+    %th Shortened Url
+    %th Original Url
+    %th Tags
+    %th
+  -for url_map in @url_maps
+    %tr
+      %td
+        %b=link_to url_map.short_url,url_redirect_path(url_map.short_url) 
+      %td=h url_map.long_url
+      %td
+        - url_map.tags.each do |tag|
+          %li.tag=tag.name
+      %td
+        = link_to "Show", url_map,:class=>'btn '
+        = link_to "Edit", edit_url_map_path(url_map),:class=>'btn '
+        = link_to "Remove", url_map, :confirm => 'Are you sure?', :method => :delete,:class=>'btn'
+
+
+= link_to "Create Short URL", new_url_map_path,:class=>"btn primary" 

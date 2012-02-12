@@ -1,0 +1,25 @@
+- title "Url Map"
+%table.zebra-striped.bordered-table
+  %tr
+    %td
+      %h5.span2 Short Url
+    %td
+      %h5.span12=link_to url_redirect_url(@url_map.short_url), url_redirect_path(@url_map.short_url)
+  %tr
+    %td
+      %h5.span2 Long Url
+    %td
+      %h5.span12=link_to @url_map.long_url,@url_map.long_url
+  %tr
+    %td
+      %h5.span2 Tags
+    %td
+      .span12
+        - @url_map.tags.each do |tag|
+          %li.tag=tag.name
+.row
+  = link_to "Destroy", @url_map, :confirm => 'Are you sure?', :method => :delete,:class=>"btn"
+  
+  = link_to "Edit", edit_url_map_path(@url_map),:class=>"btn"
+  
+  = link_to "View All", url_maps_path,:class=>"btn"

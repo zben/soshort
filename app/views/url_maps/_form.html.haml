@@ -1,0 +1,39 @@
+- form_for @url_map do |f|
+  = f.error_messages
+  %table.zebra-striped.bordered-table
+    %tr
+      %td.span2= f.label :short_url
+      %td
+        = f.text_field :short_url,:placeholder=>"Leave empty to generate random URL",:id=>"short_url"
+        #msgbox
+    %tr
+      %td.span2= f.label :long_url
+      %td= f.text_field :long_url,:placeholder=>"Copy the complete url here"
+    %tr
+      %td.span2= f.label :tags
+    
+      %td.tags= text_field_tag :tags
+   
+  .span5.offset2=submit_tag "Shorten",:class=>"btn primary"
+    
+:javascript
+  $(document).ready(function() {
+    $(".tags input").autoSuggest("/tags/list", {asHtmlID: "tags", selectedValuesProp: "id", selectedItemProp: "name", searchObjProps: "name", startText: "Enter tags here",matchCase: false, 
+    preFill: #{@url_map.tags.map{|x| {:id=>x.id,:name=>x.name}}.to_json}
+    });
+
+   $("#short_url").blur(function() {
+      $("#msgbox").removeClass().addClass('messagebox').text('Checking availability...').fadeIn("slow");
+      $.post("#{check_url_path(@url_map.id)}",{ q:$(this).val() } ,function(data) {
+        if(data=="available") { 
+          $("#msgbox").fadeTo(200,0.1,function() { 
+            $(this).html(data).addClass('msgboxok').fadeTo(900,1);
+          });
+          } else {
+            $("#msgbox").fadeTo(200,0.1,function() { 
+            $(this).html(data).addClass('msgboxerror').fadeTo(900,1);
+          });
+        }
+      });
+    });
+  });
