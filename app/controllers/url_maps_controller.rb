@@ -35,7 +35,7 @@ class UrlMapsController < ApplicationController
   
   def update
     @url_map = UrlMap.find(params[:id])  
-    result = UrlMap.validation_result(params[:url_map][:short_url])
+    result = UrlMap.validation_result(params[:url_map][:short_url],params[:id])
     if result!="available"
       flash[:error]=result
       render :action=>'new' 
