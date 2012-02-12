@@ -2,6 +2,14 @@
 
 This project is a response to a code challenge. [*demo site*](http://soshort.heroku.com)
 
+### Technology Stack
+*Rails 2.3.14
+*Ruby 1.8.7
+*PostgreSQL 9.0
+*jQuery
+*jQuery.autoSuggest
+*Haml
+
 ### Technical Details
 * check short url does not already exist through ajax
 * server side validation on short url
