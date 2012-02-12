@@ -1,6 +1,8 @@
 ## SoShort - A simple bit.ly clone
 
-This project is a response to a code challenge. [*demo site*](http://soshort.heroku.com)
+This project is a response to a code challenge. 
+
+**demo site:** http://soshort.heroku.com
 
 ### Technology Stack
 * Rails 2.3.14
