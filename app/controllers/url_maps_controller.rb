@@ -19,7 +19,10 @@ class UrlMapsController < ApplicationController
       render :action=>'new' 
     else  
       @url_map.short_url=UrlMap.random_unique_string(6) if params[:url_map][:short_url].empty?
-      if @url_map.save
+      if (params[:url_map][:long_url]=~ URI::regexp) != 0
+        flash[:error]="Original URL is not valid."
+        render :action=>'new'
+      elsif @url_map.save
         @url_map.update_tags params
         flash[:notice] = "Successfully created url map."
         redirect_to @url_map
@@ -41,7 +44,10 @@ class UrlMapsController < ApplicationController
       render :action=>'new' 
     else
       params[:url_map][:short_url] =UrlMap.random_unique_string(6) if params[:url_map][:short_url].empty?
-      if @url_map.update_attributes(params[:url_map])
+      if (params[:url_map][:long_url]=~ URI::regexp) != 0
+        flash[:error]="Original URL is not valid."
+        render :action=>'new'
+      elsif @url_map.update_attributes(params[:url_map])
          @url_map.update_tags params
          puts "result"
          puts @url_map.tags.count

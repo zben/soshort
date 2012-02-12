@@ -14,6 +14,7 @@ input{width:100%;}
 li.tag{
   display:inline-block;
   background-color:green;
-  padding:5px 10px;
+  padding:3px 10px;
+  margin:3px 5px;
   color:white}
 li.tag a{color:white;}

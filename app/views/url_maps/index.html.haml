@@ -7,13 +7,16 @@
     %th
   -for url_map in @url_maps
     %tr
-      %td
+      %td.span2
         %b=link_to url_map.short_url,url_redirect_path(url_map.short_url) 
-      %td=h url_map.long_url
-      %td
+      %td.span3
+        -url_map.long_url.scan(/.{1,50}/).each do |line|
+          =line
+          %br
+      %td.span4
         - url_map.tags.each do |tag|
           %li.tag=tag.name
-      %td
+      %td.span5
         = link_to "Show", url_map,:class=>'btn '
         = link_to "Edit", edit_url_map_path(url_map),:class=>'btn '
         = link_to "Remove", url_map, :confirm => 'Are you sure?', :method => :delete,:class=>'btn'

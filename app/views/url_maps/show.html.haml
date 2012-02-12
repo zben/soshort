@@ -9,7 +9,10 @@
     %td
       %h5.span2 Long Url
     %td
-      %h5.span12=link_to @url_map.long_url,@url_map.long_url
+      .span12
+        -@url_map.long_url.scan(/.{1,100}/).each do |line|
+          =line.html_safe
+          %br
   %tr
     %td
       %h5.span2 Tags

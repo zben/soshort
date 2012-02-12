@@ -10088,3 +10088,1884 @@ Rendering template within layouts/application
 Rendering url_maps/show
   [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
 Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:48:39) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 41ms (View: 27, DB: 4) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 17:48:46) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+Rendered url_maps/_form (18.2ms)
+Completed in 34ms (View: 26, DB: 3) | 200 OK [http://localhost/url_maps/4/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 17:48:49) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"4", "url_map"=>{"long_url"=>"http://yahoo.com", "short_url"=>"6D1lin"}, "tags"=>"", "as_values_tags"=>","}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 4) [0m
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '6D1lin') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.3ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = '6D1lin' AND "url_maps".id <> 4) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM "tags_url_maps" WHERE url_map_id = 4 AND tag_id IN (3)[0m
+  [4;36;1mSQL (18.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+Redirected to http://localhost:3000/url_maps/4
+Completed in 42ms (DB: 22) | 302 Found [http://localhost/url_maps/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 17:48:49) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/url_maps/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:48:53) [GET]
+  [4;36;1mUrlMap Load (0.9ms)[0m   [0;1mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;35;1mTag Load (1.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;36;1mTag Load (2.3ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 36ms (View: 26, DB: 6) | 200 OK [http://localhost/url_maps]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 17:48:55) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (62.3ms)
+Completed in 81ms (View: 65, DB: 2) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;36;1mSQL (3.8ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 17:48:58) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com", "short_url"=>"ZWRcmO"}, "tags"=>"", "as_values_tags"=>","}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;36;1mUrlMap Load (0.6ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUrlMap Load (0.3ms)[0m   [0;1mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDELETE FROM "tags_url_maps" WHERE url_map_id = 3 AND tag_id IN (3)[0m
+  [4;35;1mSQL (16.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 42ms (DB: 24) | 302 Found [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 17:48:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 17ms (View: 8, DB: 3) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:49:00) [GET]
+  [4;35;1mUrlMap Load (1.0ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 27ms (View: 19, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 17:49:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+Rendered url_maps/_form (11.4ms)
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/url_maps/4/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#tag_list (for 127.0.0.1 at 2012-02-12 17:49:11) [GET]
+  Parameters: {"q"=>"tec"}
+  [4;36;1mTag Load (1.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name like '%tec%') [0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/tags/list?q=tec]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 17:49:24) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"4", "url_map"=>{"long_url"=>"http://yahoo.com", "short_url"=>"6D1lin"}, "tags"=>"", "as_values_tags"=>"technolgoy,technology,goal,try,again,time,haha,"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 4) [0m
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '6D1lin') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = '6D1lin' AND "url_maps".id <> 4) LIMIT 1[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.8ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'technolgoy') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('technolgoy', '2012-02-12 22:49:24.834985', '2012-02-12 22:49:24.834985') RETURNING "id"[0m
+  [4;35;1mSQL (74.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:49:24.834985', 4, '2012-02-12 22:49:24.834985', 4)[0m
+  [4;36;1mSQL (57.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (1.5ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'technology') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 21:51:16.021252', 1, '2012-02-12 21:51:16.021252', 4)[0m
+  [4;36;1mSQL (34.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.7ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'goal') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('goal', '2012-02-12 22:49:25.051465', '2012-02-12 22:49:25.051465') RETURNING "id"[0m
+  [4;36;1mSQL (9.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:49:25.051465', 5, '2012-02-12 22:49:25.051465', 4)[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'try') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('try', '2012-02-12 22:49:25.090146', '2012-02-12 22:49:25.090146') RETURNING "id"[0m
+  [4;35;1mSQL (47.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:49:25.090146', 6, '2012-02-12 22:49:25.090146', 4)[0m
+  [4;36;1mSQL (67.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'again') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('again', '2012-02-12 22:49:25.231579', '2012-02-12 22:49:25.231579') RETURNING "id"[0m
+  [4;36;1mSQL (102.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:49:25.231579', 7, '2012-02-12 22:49:25.231579', 4)[0m
+  [4;35;1mSQL (9.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'time') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('time', '2012-02-12 22:49:25.362978', '2012-02-12 22:49:25.362978') RETURNING "id"[0m
+  [4;35;1mSQL (62.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:49:25.362978', 8, '2012-02-12 22:49:25.362978', 4)[0m
+  [4;36;1mSQL (68.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'haha') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('haha', '2012-02-12 22:49:25.514662', '2012-02-12 22:49:25.514662') RETURNING "id"[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:49:25.514662', 9, '2012-02-12 22:49:25.514662', 4)[0m
+  [4;35;1mSQL (11.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+Redirected to http://localhost:3000/url_maps/4
+Completed in 762ms (DB: 581) | 302 Found [http://localhost/url_maps/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 17:49:25) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://localhost/url_maps/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:49:28) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 35ms (View: 21, DB: 7) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:05) [GET]
+  [4;35;1mUrlMap Load (1.0ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 40ms (View: 23, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:14) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 46ms (View: 31, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:19) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 31ms (View: 20, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:24) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 31ms (View: 21, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:28) [GET]
+  [4;35;1mUrlMap Load (6.1ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 95ms (View: 76, DB: 7) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:39) [GET]
+  [4;35;1mUrlMap Load (1.1ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 29ms (View: 21, DB: 3) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:42) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 22ms (View: 16, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:50) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 36ms (View: 27, DB: 3) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:54) [GET]
+  [4;35;1mUrlMap Load (1.0ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 31ms (View: 23, DB: 4) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:50:58) [GET]
+  [4;35;1mUrlMap Load (2.3ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 21ms (View: 13, DB: 4) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:51:09) [GET]
+  [4;35;1mUrlMap Load (10.1ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 68ms (View: 41, DB: 12) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:51:17) [GET]
+  [4;35;1mUrlMap Load (2.1ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 39ms (View: 23, DB: 5) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 17:52:06) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (10.3ms)
+Completed in 22ms (View: 13, DB: 3) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 17:52:25) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;35;1mUrlMap Load (1.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;36;1mUrlMap Update (0.4ms)[0m   [0;1mUPDATE "url_maps" SET "updated_at" = '2012-02-12 22:52:25.582712', "long_url" = 'http://google.com/?asfasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs' WHERE "id" = 3[0m
+  [4;35;1mSQL (18.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.2ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'Enter tags here') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:24:30.399639', 3, '2012-02-12 22:24:30.399639', 3)[0m
+  [4;36;1mSQL (103.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 180ms (DB: 131) | 302 Found [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 17:52:25) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:52:27) [GET]
+  [4;36;1mUrlMap Load (0.9ms)[0m   [0;1mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;35;1mTag Load (0.7ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;36;1mTag Load (0.4ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 23ms (View: 16, DB: 4) | 200 OK [http://localhost/url_maps]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 17:52:47) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (61.8ms)
+Completed in 78ms (View: 63, DB: 1) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 17:52:56) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"", "as_values_tags"=>",3,"}
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;36;1mUrlMap Load (0.6ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUrlMap Load (0.3ms)[0m   [0;1mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;35;1mUrlMap Update (1.5ms)[0m   [0mUPDATE "url_maps" SET "updated_at" = '2012-02-12 22:52:56.374674', "long_url" = 'http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs' WHERE "id" = 3[0m
+  [4;36;1mSQL (20.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM "tags_url_maps" WHERE url_map_id = 3 AND tag_id IN (3)[0m
+  [4;36;1mSQL (73.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."id" = 3) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:24:30.399639', 3, '2012-02-12 22:24:30.399639', 3)[0m
+  [4;36;1mSQL (65.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 210ms (DB: 165) | 302 Found [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 17:52:56) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 19ms (View: 10, DB: 2) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (8.8ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:52:59) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (1.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 35ms (View: 21, DB: 12) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:58:18) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+
+ActionView::TemplateError (undefined method `text' for "http://yahoo.com":String) on line #13 of app/views/url_maps/index.html.haml:
+10:       %td.span2
+11:         %b=link_to url_map.short_url,url_redirect_path(url_map.short_url) 
+12:       %td.span4
+13:         -url_map.long_url.text.scan(/.{1,10}/).each do |line|
+14:           =line
+15:           %br
+16:       %td.span4
+
+    app/views/url_maps/index.html.haml:13:in `_run_haml_app47views47url_maps47index46html46haml'
+    app/views/url_maps/index.html.haml:8:in `each'
+    app/views/url_maps/index.html.haml:8:in `_run_haml_app47views47url_maps47index46html46haml'
+    haml (3.1.4) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.1.4) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:58:26) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 57ms (View: 38, DB: 8) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:58:34) [GET]
+  [4;35;1mUrlMap Load (1.0ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 33ms (View: 25, DB: 4) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:58:56) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 27ms (View: 20, DB: 3) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:59:31) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (65.1ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 109ms (View: 37, DB: 67) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:59:44) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 28ms (View: 21, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:59:53) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 32ms (View: 25, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 17:59:58) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 71ms (View: 14, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:00:14) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.6ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (22.6ms)
+Completed in 35ms (View: 25, DB: 2) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:00:17) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"", "as_values_tags"=>","}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.3ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM "tags_url_maps" WHERE url_map_id = 3 AND tag_id IN (3)[0m
+  [4;36;1mSQL (16.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 37ms (DB: 22) | 302 Found [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:00:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:01:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+
+ActionView::TemplateError (undefined local variable or method `url_map' for #<ActionView::Base:0xb6f4af2c>) on line #13 of app/views/url_maps/show.html.haml:
+10:       %h5.span2 Long Url
+11:     %td
+12:       %h5.span12
+13:         -url_map.long_url.scan(/.{1,50}/).each do |line|
+14:           =line
+15:           %br
+16:   %tr
+
+    app/views/url_maps/show.html.haml:13:in `_run_haml_app47views47url_maps47show46html46haml'
+    haml (3.1.4) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.1.4) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:01:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 55ms (View: 32, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:01:48) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 30ms (View: 19, DB: 3) | 200 OK [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:01:55) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:02:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.6ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (10.2ms)
+Completed in 71ms (View: 58, DB: 3) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:02:11) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;35;1mUrlMap Load (1.3ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.3ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.4ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'Enter tags here') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 22:24:30.399639', 3, '2012-02-12 22:24:30.399639', 3)[0m
+  [4;35;1mSQL (50.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 102ms (DB: 57) | 302 Found [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:02:11) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT * FROM "tags" [0m
+  [4;35;1mTag Load (0.7ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."id" = 3) [0m
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."id" = 3) [0m
+  [4;35;1mTag Delete all (21.7ms)[0m   [0mDELETE FROM "tags" WHERE ("id" IN (3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:03:49) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (14.7ms)
+Completed in 37ms (View: 17, DB: 1) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:03:51) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;35;1mUrlMap Load (0.6ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.3ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 27ms (DB: 3) | 302 Found [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:03:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 20ms (View: 7, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:03:53) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (9.6ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:03:58) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.3ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 20ms (DB: 2) | 302 Found [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:03:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (10.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 149ms (View: 124, DB: 11) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:04:06) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (1.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (12.6ms)
+Completed in 29ms (View: 14, DB: 2) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:04:14) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\\tsa\\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.2ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;36;1mUrlMap Update (0.4ms)[0m   [0;1mUPDATE "url_maps" SET "updated_at" = '2012-02-12 23:04:14.470309', "long_url" = 'http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs' WHERE "id" = 3[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 44ms (DB: 21) | 302 Found [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:04:14) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 16ms (View: 7, DB: 3) | 200 OK [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:04:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:04:52) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.8ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 29ms (View: 10, DB: 3) | 200 OK [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:04:55) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (9.1ms)
+Completed in 19ms (View: 11, DB: 1) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:05:01) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (10.6ms)
+Completed in 70ms (View: 14, DB: 1) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;35;1mSQL (2.6ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:05:04) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\\tsa\\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (1.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;35;1mUrlMap Load (1.0ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (5.6ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 38ms (DB: 16) | 302 Found [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:05:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 25ms (View: 17, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:05:06) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 16ms (View: 7, DB: 3) | 200 OK [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:05:20) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:28) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (1.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 3) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:28) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (1.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:28) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (1.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:28) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (1.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 8ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:28) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (1.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:28) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (3.2ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 15ms (DB: 3) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:28) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (1.8ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:34) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (1.8ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 11ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:05:40) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (2.0ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 9) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-02-12 18:11:31) [GET]
+
+SyntaxError (/home/ben/Dropbox/rails_projects/Active Projects/shortener/app/controllers/url_maps_controller.rb:22: syntax error, unexpected tNEQ
+      if params[:url_map][:short_url]=~ URI::regexp != 0
+                                                      ^
+/home/ben/Dropbox/rails_projects/Active Projects/shortener/app/controllers/url_maps_controller.rb:25: syntax error, unexpected kELSE, expecting kEND
+      else if @url_map.save
+          ^):
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-02-12 18:11:34) [GET]
+
+SyntaxError (/home/ben/Dropbox/rails_projects/Active Projects/shortener/app/controllers/url_maps_controller.rb:22: syntax error, unexpected tNEQ
+      if params[:url_map][:short_url]=~ URI::regexp != 0
+                                                      ^
+/home/ben/Dropbox/rails_projects/Active Projects/shortener/app/controllers/url_maps_controller.rb:25: syntax error, unexpected kELSE, expecting kEND
+      else if @url_map.save
+          ^):
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (83.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-02-12 18:11:44) [GET]
+
+SyntaxError (/home/ben/Dropbox/rails_projects/Active Projects/shortener/app/controllers/url_maps_controller.rb:79: syntax error, unexpected $end, expecting kEND):
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 18:12:12) [GET]
+  [4;36;1mUrlMap Load (1.3ms)[0m   [0;1mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;35;1mTag Load (0.7ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 37ms (View: 15, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (12.8ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#new (for 127.0.0.1 at 2012-02-12 18:12:15) [GET]
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (6.6ms)
+Completed in 19ms (View: 12, DB: 13) | 200 OK [http://localhost/url_maps/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#check_url (for 127.0.0.1 at 2012-02-12 18:12:18) [POST]
+  Parameters: {"q"=>""}
+  [4;35;1mUrlMap Load (1.8ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '') [0m
+Completed in 22ms (View: 1, DB: 3) | 200 OK [http://localhost/checkurl/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:12:21) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"vhhE+Uc3OBHWNF4h5G82d5djwxZNhck6WRJZVowjvoc=", "url_map"=>{"long_url"=>"asdfasdasfasd", "short_url"=>""}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '') [0m
+  [4;36;1mUrlMap Load (0.1ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'wnXedh') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (6.1ms)
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/url_maps]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:12:30) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"aasdfsdfasdasfasd", "short_url"=>"wnXedh"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (4.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'wnXedh') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (10.1ms)
+Completed in 28ms (View: 12, DB: 13) | 200 OK [http://localhost/url_maps]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 18:12:35) [GET]
+  [4;36;1mUrlMap Load (0.9ms)[0m   [0;1mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;35;1mTag Load (0.7ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;36;1mTag Load (0.4ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 20ms (View: 15, DB: 3) | 200 OK [http://localhost/url_maps]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:12:38) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (11.3ms)
+Completed in 32ms (View: 13, DB: 1) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:12:40) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\\tsa\\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUrlMap Load (0.3ms)[0m   [0;1mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 36ms (DB: 3) | 302 Found [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:12:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:12:42) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;36;1mUrlMap Load (1.7ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 57ms (DB: 4) | 302 Found [http://localhost/ZWRcmO]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:12:42) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;36;1mUrlMap Load (1.8ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:12:42) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;36;1mUrlMap Load (1.7ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 10ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:12:42) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;36;1mUrlMap Load (1.8ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:12:42) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;36;1mUrlMap Load (1.8ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:12:42) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;36;1mUrlMap Load (1.9ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 10ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:12:42) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;36;1mUrlMap Load (1.9ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/?asfasdfsasdfsasdf&sasdf/sasd?fsasdfsasdfsasdf\tsa\tsdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfsasdfs
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:12:45) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (3.3ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (22.3ms)
+Completed in 44ms (View: 24, DB: 4) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:12:51) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;36;1mUrlMap Load (0.6ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUrlMap Load (0.3ms)[0m   [0;1mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;35;1mUrlMap Update (0.3ms)[0m   [0mUPDATE "url_maps" SET "updated_at" = '2012-02-12 23:12:51.126700', "long_url" = 'http://google.com/' WHERE "id" = 3[0m
+  [4;36;1mSQL (66.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 97ms (DB: 70) | 302 Found [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:12:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:12:53) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;35;1mUrlMap Load (2.1ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/
+Completed in 10ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:12:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (9.5ms)
+Completed in 20ms (View: 11, DB: 3) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:13:01) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/asdfasdfads", "short_url"=>"ZWRcmO"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;35;1mUrlMap Load (0.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.2ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;36;1mUrlMap Update (0.3ms)[0m   [0;1mUPDATE "url_maps" SET "updated_at" = '2012-02-12 23:13:01.535199', "long_url" = 'http://google.com/asdfasdfads' WHERE "id" = 3[0m
+  [4;35;1mSQL (12.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 94ms (DB: 15) | 302 Found [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:13:01) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:13:04) [GET]
+  Parameters: {"short_url"=>"ZWRcmO"}
+  [4;36;1mUrlMap Load (1.9ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+Redirected to http://google.com/asdfasdfads
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/ZWRcmO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#edit (for 127.0.0.1 at 2012-02-12 18:13:09) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (2.0ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/edit
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Rendered url_maps/_form (19.5ms)
+Completed in 39ms (View: 23, DB: 3) | 200 OK [http://localhost/url_maps/3/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#update (for 127.0.0.1 at 2012-02-12 18:13:15) [PUT]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "id"=>"3", "url_map"=>{"long_url"=>"http://google.com/asdfasdfads", "short_url"=>"ZWRcmO"}, "tags"=>"", "as_values_tags"=>"google,"}
+  [4;35;1mUrlMap Load (0.4ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+  [4;36;1mUrlMap Load (0.5ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'ZWRcmO' AND "url_maps".id <> 3) LIMIT 1[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (3.4ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'google') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('google', '2012-02-12 23:13:15.599837', '2012-02-12 23:13:15.599837') RETURNING "id"[0m
+  [4;36;1mSQL (13.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "tags_url_maps" ("created_at", "tag_id", "updated_at", "url_map_id") VALUES ('2012-02-12 23:13:15.599837', 10, '2012-02-12 23:13:15.599837', 3)[0m
+  [4;35;1mSQL (59.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Redirected to http://localhost:3000/url_maps/3
+Completed in 132ms (DB: 82) | 302 Found [http://localhost/url_maps/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:13:15) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUrlMap Load (0.3ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://localhost/url_maps/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 18:13:17) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+Completed in 25ms (View: 14, DB: 8) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#new (for 127.0.0.1 at 2012-02-12 18:13:38) [GET]
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (6.9ms)
+Completed in 29ms (View: 10, DB: 9) | 200 OK [http://localhost/url_maps/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:13:48) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadssasdfadss", "short_url"=>""}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;36;1mUrlMap Load (2.0ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '') [0m
+  [4;35;1mUrlMap Load (0.6ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (57.8ms)
+Completed in 77ms (View: 60, DB: 3) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:13:57) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfadssasdfadssa", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.6ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (6.2ms)
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:14:08) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfadssasdfadssa.com/fadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfads", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (1.3ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (6.1ms)
+Completed in 22ms (View: 8, DB: 1) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:14:12) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfadssasdfadssa.com/fadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfadsfads", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (8.7ms)
+Completed in 23ms (View: 11, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:14:20) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfadssasdfadssa.com/fadsfadsfa", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (6.7ms)
+Completed in 29ms (View: 9, DB: 7) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:14:22) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfadssasdfadssa.com/fadsfadsfa", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (10.2ms)
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:14:24) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfadssasdfadssa.com/fadsfadsfa", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (6.5ms)
+Completed in 20ms (View: 10, DB: 5) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:14:32) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://google.com", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (1.6ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (15.8ms)
+Completed in 42ms (View: 20, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:14:33) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://google.com", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (1.5ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (11.5ms)
+Completed in 35ms (View: 17, DB: 3) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:14:35) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://google.com", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (6.6ms)
+Completed in 24ms (View: 10, DB: 8) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:15:33) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://google.com", "short_url"=>"pWAOU9"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.8ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.3ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'pWAOU9') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "url_maps" ("short_url", "long_url", "created_at", "updated_at") VALUES('pWAOU9', 'http://google.com', '2012-02-12 23:15:33.623713', '2012-02-12 23:15:33.623713') RETURNING "id"[0m
+  [4;35;1mSQL (81.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 5 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/url_maps/5
+Completed in 180ms (DB: 84) | 302 Found [http://localhost/url_maps]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:15:33) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 5 ) [0m
+Completed in 16ms (View: 8, DB: 5) | 200 OK [http://localhost/url_maps/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 18:15:35) [GET]
+  [4;35;1mUrlMap Load (0.8ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 5 ) [0m
+Completed in 35ms (View: 23, DB: 3) | 200 OK [http://localhost/url_maps]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#new (for 127.0.0.1 at 2012-02-12 18:15:38) [GET]
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (9.8ms)
+Completed in 29ms (View: 19, DB: 0) | 200 OK [http://localhost/url_maps/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:15:50) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdf", "short_url"=>""}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.7ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '') [0m
+  [4;36;1mUrlMap Load (0.2ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '35mPj8') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUrlMap Load (0.2ms)[0m   [0;1mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = '35mPj8') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPG::Error: ERROR: value too long for type character varying(255)
+: INSERT INTO "url_maps" ("short_url", "long_url", "created_at", "updated_at") VALUES('35mPj8', 'http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdf', '2012-02-12 23:15:50.041966', '2012-02-12 23:15:50.041966') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::StatementInvalid (PG::Error: ERROR:  value too long for type character varying(255)
+: INSERT INTO "url_maps" ("short_url", "long_url", "created_at", "updated_at") VALUES('35mPj8', 'http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdf', '2012-02-12 23:15:50.041966', '2012-02-12 23:15:50.041966') RETURNING "id"):
+  app/controllers/url_maps_controller.rb:25:in `create'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (49.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:18:39) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdf", "short_url"=>""}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+
+ArgumentError (Too many range options specified.  Choose only one.):
+  app/models/url_map.rb:3
+  app/controllers/url_maps_controller.rb:15:in `create'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:19:31) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdf", "short_url"=>""}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.8ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '') [0m
+  [4;36;1mUrlMap Load (0.1ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'dsOVQh') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUrlMap Load (0.2ms)[0m   [0;1mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'dsOVQh') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `foo' for #<UrlMap:0xb6f32724>):
+  app/controllers/url_maps_controller.rb:25:in `create'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/ben/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:19:44) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdf", "short_url"=>""}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.8ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = '') [0m
+  [4;36;1mUrlMap Load (0.2ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'X9kOJg') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUrlMap Load (0.2ms)[0m   [0;1mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'X9kOJg') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering url_maps/new
+Rendered url_maps/_form (8.6ms)
+Completed in 29ms (View: 11, DB: 2) | 200 OK [http://localhost/url_maps]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#create (for 127.0.0.1 at 2012-02-12 18:19:59) [POST]
+  Parameters: {"commit"=>"Shorten", "authenticity_token"=>"CdsBHUoqfGuaZ8wOmk6wah9tE8tGGJZFKvUDTmEK7cg=", "url_map"=>{"long_url"=>"http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsd", "short_url"=>"X9kOJg"}, "tags"=>"Enter tags here", "as_values_tags"=>""}
+  [4;35;1mUrlMap Load (0.8ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'X9kOJg') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUrlMap Load (0.3ms)[0m   [0mSELECT "url_maps".id FROM "url_maps" WHERE ("url_maps"."short_url" = 'X9kOJg') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "url_maps" ("short_url", "long_url", "created_at", "updated_at") VALUES('X9kOJg', 'http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsd', '2012-02-12 23:19:59.615265', '2012-02-12 23:19:59.615265') RETURNING "id"[0m
+  [4;35;1mSQL (110.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 6 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/url_maps/6
+Completed in 145ms (DB: 115) | 302 Found [http://localhost/url_maps]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#show (for 127.0.0.1 at 2012-02-12 18:19:59) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mUrlMap Load (0.4ms)[0m   [0;1mSELECT * FROM "url_maps" WHERE ("url_maps"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering url_maps/show
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 6 ) [0m
+Completed in 18ms (View: 9, DB: 3) | 200 OK [http://localhost/url_maps/6]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#redirect (for 127.0.0.1 at 2012-02-12 18:20:02) [GET]
+  Parameters: {"short_url"=>"X9kOJg"}
+  [4;35;1mUrlMap Load (2.6ms)[0m   [0mSELECT * FROM "url_maps" WHERE ("url_maps"."short_url" = 'X9kOJg') [0m
+Redirected to http://asdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsdfdfsd
+Completed in 17ms (DB: 3) | 302 Found [http://localhost/X9kOJg]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UrlMapsController#index (for 127.0.0.1 at 2012-02-12 18:20:16) [GET]
+  [4;35;1mUrlMap Load (0.9ms)[0m   [0mSELECT * FROM "url_maps" [0m
+Rendering template within layouts/application
+Rendering url_maps/index
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 4 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 3 ) [0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 5 ) [0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM "tags" INNER JOIN "tags_url_maps" ON "tags".id = "tags_url_maps".tag_id WHERE ("tags_url_maps".url_map_id = 6 ) [0m
+Completed in 33ms (View: 25, DB: 4) | 200 OK [http://localhost/url_maps]

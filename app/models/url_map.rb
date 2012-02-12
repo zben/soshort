@@ -1,6 +1,8 @@
 class UrlMap < ActiveRecord::Base
   validates_uniqueness_of :short_url
   validates_presence_of :long_url 
+  validates_length_of :long_url, :minimum => 5
+  validates_length_of :long_url, :maximum => 200
   attr_accessible :short_url, :long_url
   
   has_and_belongs_to_many :tags
@@ -27,7 +29,7 @@ class UrlMap < ActiveRecord::Base
           puts self.tags.count
           self.tags << Tag.find(tag_id) unless tags.include?(Tag.find(tag_id) ) 
           puts self.tags.count
-        elsif !tag_id.strip.empty?
+        elsif !tag_id.strip.empty? and tag_id.strip!="Enter tags here" 
           self.tags << Tag.find_or_create_by_name(tag_id)
         end   
    end
