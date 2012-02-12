@@ -1,6 +1,6 @@
 ## SoShort - A simple bit.ly clone
 
-This project is a response to a code challenge.
+This project is a response to a code challenge. [demo site](http://soshort.heroku.com)
 
 ### Technical Details
 * check short url does not already exist through ajax
