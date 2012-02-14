@@ -8,8 +8,6 @@ class UrlMap < ActiveRecord::Base
   has_and_belongs_to_many :tags
   
   def self.validation_result(string,id=nil)
-    puts string
-    puts id
     if string =~ /^[\w-]*$/
       if %w(url_maps check_url tags).include?(string)
         "this short url is already taken"
@@ -26,9 +24,7 @@ class UrlMap < ActiveRecord::Base
    self.tags=[]
    (params[:as_values_tags].split(",")+params[:tags].to_a).each do |tag_id|
         if tag_id.to_f!=0
-          puts self.tags.count
           self.tags << Tag.find(tag_id) unless tags.include?(Tag.find(tag_id) ) 
-          puts self.tags.count
         elsif !tag_id.strip.empty? and tag_id.strip!="Enter tags here" 
           self.tags << Tag.find_or_create_by_name(tag_id)
         end   

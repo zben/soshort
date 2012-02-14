@@ -1,6 +1,7 @@
 class UrlMapsController < ApplicationController
   def index
-    @url_maps = UrlMap.all
+    @url_map = UrlMap.new
+    @url_maps = UrlMap.all(:order => "created_at desc")
   end
 
   def show
@@ -49,9 +50,7 @@ class UrlMapsController < ApplicationController
         render :action=>'new'
       elsif @url_map.update_attributes(params[:url_map])
          @url_map.update_tags params
-         puts "result"
-         puts @url_map.tags.count
-         flash[:notice] = "Successfully created short URL."
+         flash[:notice] = "Successfully updated short URL."
          redirect_to @url_map
       else
         render :action => 'new'
@@ -67,9 +66,7 @@ class UrlMapsController < ApplicationController
   end
   
   def tag_list
-    escaped_query =  params[:q].gsub ('%', '\%').gsub ('_', '\_')
-
-    render :json=>Tag.find(:all,:conditions=>["name like ?", "%#{escaped_query}%"]).map{|x| {:id=>x.id,:name=>x.name}}
+    render :json=>Tag.json_filter(params[:q])
   end
   
   def check_url

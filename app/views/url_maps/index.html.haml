@@ -1,8 +1,10 @@
+%br
+#new_form=render 'url_maps/form'
 %h3 All Short URLs 
 %table.zebra-striped.bordered-table
   %tr
-    %th Shortened Url
-    %th Original Url
+    %th Shortened URL
+    %th Original URL
     %th Tags
     %th
   -for url_map in @url_maps
@@ -22,4 +24,3 @@
         = link_to "Remove", url_map, :confirm => 'Are you sure?', :method => :delete,:class=>'btn'
 
 
-= link_to "Create Short URL", new_url_map_path,:class=>"btn primary" 

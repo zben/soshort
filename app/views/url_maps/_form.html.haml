@@ -13,9 +13,9 @@
       %td.span2= f.label :tags
     
       %td.tags= text_field_tag :tags
-   
-  .span5.offset2=submit_tag "Shorten",:class=>"btn primary"
-    
+  .row
+    .span5.offset5=submit_tag "Shorten it!",:class=>"btn primary"
+      
 :javascript
   $(document).ready(function() {
     $(".tags input").autoSuggest("/tags/list", {asHtmlID: "tags", selectedValuesProp: "id", selectedItemProp: "name", searchObjProps: "name", startText: "Enter tags here",matchCase: false, 

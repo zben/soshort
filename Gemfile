@@ -3,9 +3,6 @@ gem "rails", "~> 2.3.14"
 gem "pg"
 gem 'haml'
 gem "nifty-generators", :group => :development
-# bundler requires these gems in all environments
-# gem "nokogiri", "1.4.2"
-# gem "geokit"
 
 group :development do
   # bundler requires these gems in development
